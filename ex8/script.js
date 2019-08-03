@@ -26,7 +26,7 @@ addButton.addEventListener('click', function(){
     toDo.appendChild(newList)
     
     span.addEventListener('click', function(){
-        span.style['text-decoration']= (newList.style['text-decoration'] === 'line-through') ? 'none' :'line-through'
+        span.style['text-decoration']= (span.style['text-decoration'] === 'line-through') ? 'none' :'line-through'
     })
     deleteButton.addEventListener('click', function(e){
         newList.remove()
