@@ -14,11 +14,35 @@ let items = document.querySelectorAll('#todo-list li')
 
 addButton.addEventListener('click', function(){
     let newList = document.createElement('li')
-    newList.innerHTML = description.value
+    let span = document.createElement('span')
+    span.innerHTML = description.value
+    newList.appendChild(span)
+    let deleteButton = document.createElement('button')
+    deleteButton.innerHTML = "Delete"
+    let editButton = document.createElement('button')
+    editButton.innerHTML = "Edit"
+    newList.appendChild(editButton)
+    newList.appendChild(deleteButton)
     toDo.appendChild(newList)
     
-    newList.addEventListener('click', function(){
-        newList.style['text-decoration']= 'line-through'
+    span.addEventListener('click', function(){
+        span.style['text-decoration']= (newList.style['text-decoration'] === 'line-through') ? 'none' :'line-through'
+    })
+    deleteButton.addEventListener('click', function(e){
+        newList.remove()
+    })
+
+    editButton.addEventListener('click', function(e){
+        if (newList.querySelector('input')){
+            newList.querySelector('input').remove()
+        }
+        let input = document.createElement('input')
+        input.value = span.innerHTML
+        newList.appendChild(input)
+        input.addEventListener('change', function(){
+            span.innerHTML = input.value
+            input.remove()
+        })
     })
     console.dir(document.querySelectorAll('#todo-list li').length)
 })
