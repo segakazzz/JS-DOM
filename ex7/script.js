@@ -8,7 +8,6 @@ let header = document.querySelector("#section-header")
 header.addEventListener('click', function(){
 
     let section = document.querySelector('#section')
-    section.style.display = (section.style.display === "none") ? "block" : "none"
-    //section.style.transition = "display none"
-    
+    // section.style.display = (section.style.display === "none") ? "block" : "none"
+    section.className = (section.className === '') ? 'collapsed' : ''
 })
