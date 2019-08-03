@@ -1,5 +1,5 @@
 ### Link to this work
-https://segakazzz.github.com/JS-DOM/index.html
+https://segakazzz.github.io/JS-DOM/
 
 ### Thangs I learnt
 
